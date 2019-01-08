@@ -1,6 +1,6 @@
 pipelines:
-  build_app:
-    group: app
+  build:
+    group: default
     label_template: "app-frontend-${COUNT}"
     materials:
       source_code:
@@ -12,6 +12,7 @@ pipelines:
           pre_build:
             tasks:
               - exec:
+                run_if: any
                 command: sh
                 arguments:
                   - pipeline-scripts/pre_build.sh
