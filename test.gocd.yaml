@@ -1,13 +1,12 @@
 pipelines:
   build:
     group: frontend
-    label_template: "${COUNT}"
     materials:
       source_code:
         git: "git@git.thoughtworks.net:bookstore/bookstore-frontend.git"
         branch: master
     stages:
-      - build:
+      - pre_build:
           jobs:
             pre_build:
               tasks:
