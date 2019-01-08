@@ -8,11 +8,11 @@ pipelines:
         branch: master
     stages:
       - build:
-        jobs:
-          pre_build:
-            tasks:
-              - exec:
-                run_if: any
-                command: sh
-                arguments:
-                  - pipeline-scripts/pre_build.sh
+          jobs:
+            pre_build:
+              tasks:
+                - exec:
+                  run_if: any
+                  command: sh
+                  arguments:
+                    - pipeline-scripts/pre_build.sh
