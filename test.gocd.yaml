@@ -6,7 +6,15 @@ pipelines:
         git: "git@git.thoughtworks.net:bookstore/bookstore-frontend.git"
         branch: master
     stages:
-      - pre_build:
+      - test:
+          jobs:
+            pre_build:
+              tasks:
+                - exec:
+                    command: echo
+                    arguments:
+                      - 'test test test'
+      - build:
           jobs:
             pre_build:
               tasks:
