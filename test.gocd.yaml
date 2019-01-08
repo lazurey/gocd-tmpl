@@ -11,8 +11,4 @@ pipelines:
           jobs:
             pre_build:
               tasks:
-                - exec:
-                  run_if: any
-                  command: sh
-                  arguments:
-                    - pipeline-scripts/pre_build.sh
+                - script: ./pipeline-scripts/pre_build.sh
