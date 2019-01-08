@@ -1,0 +1,20 @@
+pipelines:
+  build_app:
+    group: app
+    label_template: "app-frontend-${COUNT}"
+    locking: off
+    materials:
+      source_code:
+        git: "git@git.thoughtworks.net:bookstore/bookstore-frontend.git"
+        branch: master
+    stages:
+      - build:
+        fetch_materials: yes
+        clean_workspace: no
+        jobs:
+          pre_build:
+            tasks:
+              - exec:
+                command: sh
+                arguments:
+                  - pipeline-scripts/pre_build.sh
