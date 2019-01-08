@@ -1,7 +1,7 @@
 pipelines:
   build:
-    group: default
-    label_template: "app-frontend-${COUNT}"
+    group: frontend
+    label_template: "${COUNT}"
     materials:
       source_code:
         git: "git@git.thoughtworks.net:bookstore/bookstore-frontend.git"
