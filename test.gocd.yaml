@@ -3,7 +3,7 @@ pipelines:
     group: frontend
     materials:
       source_code:
-        git: "git@git.thoughtworks.net:bookstore/bookstore-frontend.git"
+        git: "git@github.com:lazurey/gocd-tmpl.git"
         branch: master
     stages:
       - test:
